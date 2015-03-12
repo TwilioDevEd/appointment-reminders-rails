@@ -39,6 +39,9 @@ $ rake db:migrate
 <!-- Run the jobs -->
 $ bin/delayed_job start
 
+on Heroku:
+heroku ps:scale worker=1
+
 
 <!-- ################################### Change Time Zone -->
 $ rake time:zones:local
