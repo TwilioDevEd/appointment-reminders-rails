@@ -67,6 +67,7 @@ class AppointmentsController < ApplicationController
 
   private
     # Use callbacks to share common setup or constraints between actions.
+    # See above ---> before_action :set_appointment, only: [:show, :edit, :update, :destroy]
     def set_appointment
       @appointment = Appointment.find(params[:id])
     end

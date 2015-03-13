@@ -22,9 +22,9 @@
         <td><%= appointment.time %></td>
         <td><%=l appointment.created_at %></td>
         <td>
-          <%= link_to t('.edit', :default => t("helpers.links.edit")),
+          <%= link_to "Edit", 
                       edit_appointment_path(appointment), :class => 'btn btn-default btn-xs' %>
-          <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+          <%= link_to "Delete",
                       appointment_path(appointment),
                       :method => :delete,
                       :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
@@ -35,6 +35,6 @@
   </tbody>
 </table>
 
-<%= link_to t('.new', :default => t("helpers.links.new")),
+<%= link_to "New",
             new_appointment_path,
             :class => 'btn btn-primary' %>
