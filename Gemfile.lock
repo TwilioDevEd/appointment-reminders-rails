@@ -73,9 +73,13 @@ GEM
       activerecord (>= 3.0, < 5.0)
       delayed_job (>= 3.0, < 4.1)
     erubis (2.7.0)
+    excon (0.44.4)
     execjs (2.4.0)
     globalid (0.3.3)
       activesupport (>= 4.1.0)
+    heroku-api (0.3.22)
+      excon (~> 0.38)
+      multi_json (~> 1.8)
     hike (1.2.3)
     i18n (0.7.0)
     jbuilder (2.2.11)
@@ -133,6 +137,8 @@ GEM
     rake (10.4.2)
     rdoc (4.2.0)
       json (~> 1.4)
+    rush (0.6.8)
+      session
     sass (3.4.13)
     sass-rails (5.0.1)
       railties (>= 4.0.0, < 5.0)
@@ -143,6 +149,7 @@ GEM
     sdoc (0.4.1)
       json (~> 1.7, >= 1.7.7)
       rdoc (~> 4.0)
+    session (3.2.0)
     slop (3.6.0)
     spring (1.3.3)
     sprockets (2.12.3)
@@ -173,6 +180,11 @@ GEM
       binding_of_caller (>= 0.7.2)
       railties (>= 4.0)
       sprockets-rails (>= 2.0, < 4.0)
+    workless (1.1.3)
+      delayed_job (>= 2.0.7)
+      heroku-api
+      rails
+      rush
 
 PLATFORMS
   ruby
@@ -194,3 +206,4 @@ DEPENDENCIES
   twitter-bootstrap-rails!
   uglifier (>= 1.3.0)
   web-console (~> 2.0)
+  workless (~> 1.1.3)

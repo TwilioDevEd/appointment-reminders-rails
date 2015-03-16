@@ -35,6 +35,9 @@ gem 'delayed_job_active_record'
 # Need daemons to start delayed_job
 gem 'daemons'
 
+# Use workless to use less workers on heroku
+gem "workless", "~> 1.1.3"
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
