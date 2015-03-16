@@ -39,8 +39,9 @@ $ rake db:migrate
 <!-- Run the jobs -->
 $ bin/delayed_job start
 
-on Heroku:
-heroku ps:scale worker=1
+<!-- Not if you use workless -->
+heroku config:add HEROKU_API_KEY=enter_your_api_key APP_NAME=appointment-reminders-rails
+TWILIO_ACCOUNT_SID=enter_your_key_here TWILIO_AUTH_TOKEN= TWILIO_NUMBER="15558675309"
 
 
 <!-- ################################### Change Time Zone -->
@@ -48,4 +49,7 @@ $ rake time:zones:local
 Add this to your config/application.rb file
 
 `config.time_zone = 'Pacific Time (US & Canada)'`
+
+
+
 
