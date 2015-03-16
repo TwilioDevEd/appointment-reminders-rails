@@ -43,7 +43,7 @@ $ bin/delayed_job start
 heroku config:add HEROKU_API_KEY=enter_your_api_key APP_NAME=appointment-reminders-rails
 TWILIO_ACCOUNT_SID=enter_your_key_here TWILIO_AUTH_TOKEN= TWILIO_NUMBER="15558675309"
 
-
+heroku ps:scale worker=1
 <!-- ################################### Change Time Zone -->
 $ rake time:zones:local
 Add this to your config/application.rb file
