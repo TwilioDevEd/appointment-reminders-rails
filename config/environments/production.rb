@@ -78,6 +78,6 @@ Rails.application.configure do
   config.active_record.dump_schema_after_migration = false
 
   config.after_initialize do 
-    Delayed::Job.scaler = :heroku_cedar
+    Delayed::Job.scaler = :heroku
   end
 end
