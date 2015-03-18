@@ -9,7 +9,7 @@
   <dt><strong><%= model_class.human_attribute_name(:phone_number) %>:</strong></dt>
   <dd><%= @appointment.phone_number %></dd>
   <dt><strong><%= model_class.human_attribute_name(:time) %>:</strong></dt>
-  <dd><%= ((@appointment.time)).strftime("%I:%M%p") %></dd>
+  <dd><%= ((@appointment.time).in_time_zone(@appointment.time_zone)).strftime("%I:%M%p") %></dd>
 </dl>
 
 <%= link_to t('.back', :default => t("helpers.links.back")),

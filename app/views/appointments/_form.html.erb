@@ -38,6 +38,9 @@
     <div class="col-lg-4">
       <%= date_select :appointment, :time, {:class => "form-control" } %>
     </div>
+    <div class="col-lg-2">
+      <%= f.time_zone_select :time_zone, ActiveSupport::TimeZone.all.sort, default: "Pacific Time (US & Canada)" %>
+    </div>
     <%=f.error_span(:time) %>
   </div>
 

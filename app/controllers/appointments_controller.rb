@@ -28,6 +28,7 @@ class AppointmentsController < ApplicationController
   # POST /appointments
   # POST /appointments.json
   def create
+    Time.zone = appointment_params[:time_zone]
     @appointment = Appointment.new(appointment_params)
     
     respond_to do |format|
@@ -74,6 +75,6 @@ class AppointmentsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def appointment_params
-      params.require(:appointment).permit(:name, :phone_number, :time)
+      params.require(:appointment).permit(:name, :phone_number, :time, :time_zone)
     end
 end
