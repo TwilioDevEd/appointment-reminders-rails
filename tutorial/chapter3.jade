@@ -1,0 +1,68 @@
+.step(data-title='Sending the Reminder', data-file="app/models/appointment.rb", data-language="ruby")
+  :markdown
+    ### Sending the Reminder
+
+    <blockquote>As an appointment system, I want to notify a user via SMS an arbitrary interval before a future appointment</blockquote>
+
+    There are a lot of ways to build this part of our application, but no matter how you implement it there should be two moving parts:
+
+    * A script that checks the database for any appointment that is upcoming, then sends an sms
+    * A worker that runs that script continuously
+
+    Let's take a look at how we decided to implement the latter with Delayed::Job.
+
+.step(data-title='Working with Delayed Job', data-file='Gemfile', data-language="ruby", data-highlight='32-36')
+  :markdown
+    ### Working with Delayed::Job
+
+    As we mentioned before, there are a lot of ways to implement a scheduler/worker, but in Rails `Delayed::Job` is the most established. If you have found a better way to schedule jobs in Rails please let [us know](mailto:help@twilio.com). 
+
+    Delayed Job needs a backend of some kind to queue the upcoming jobs. Here we have added the ActiveRecord adapter for delayed_job, which uses our database to store the 'Jobs' database. There are plenty of [backends supported](https://github.com/collectiveidea/delayed_job/wiki/Backends), so use the correct gem for your application.
+
+    Once we included the gem, we need to run `bundle install` and run the rake task to create the database.
+
+    ``` rails g delayed_job:active_record ```
+
+    You can see all of these steps in the [github repo for this project](https://github.com/TwilioDevEd/appointment-reminders-rails).
+
+    Now we're ready to create the actual job.
+
+.step(data-title='Sending a Reminder', data-file='app/models/appointment.rb', data-highlight="6-22")
+  :markdown
+    ### Sending a Reminder
+
+    The next step in sending a reminder to our user is creating the script that we'll fire at some interval before the appointment time. We will end up wanting to schedule this reminder when the appointment is created, so it makes sense to write it as a method on the Appointment model. 
+
+    The first thing we do is create a Twilio client that will send our SMS via the [Twilio REST API](/docs/api/rest/sending-sms). We'll need three things to create the Twilio client:
+
+    * Our Twilio account SID
+    * Our Twilio auth token
+    * A Twilio number in our account that can send text messages
+
+    All of these can be found in [your dashboard](https://www.twilio.com/user/account/settings). 
+
+    Then all we need to do to send an sms is use the built in `messages.create()` to send an SMS to the user's phone. 
+
+    *Model Callback*
+
+    Because we made our reminder script a method on the model we get one very handy tool; a [callback](http://api.rubyonrails.org/classes/ActiveRecord/Callbacks.html). By using the `before_create` callback we ensure that the :reminder gets called whenever an Appointment is created. The last step is making sure this callback always ends up being scheduled by Delayed Job.
+
+.step(data-title='Scheduling a Reminder', data-file='app/models/appointment.rb', data-highlight='24-28')
+  :markdown
+    ### Scheduling a Reminder
+
+    Well we're almost done, now all we need to do is write an extremely complicated schedule controller that does the following:
+    * Look up each future appointment
+    * Add it to a Jobs table
+    * Check whether it is within the `@@REMINDER_TIME` interval
+    * Fire the reminder method
+
+    Oh wait, [Delayed Job](https://github.com/collectiveidea/delayed_job#queuing-jobs) does this for free in one handy method called `handle_asynchronously` which tells Delayed Job to schedule this job whenever this method is fired. Since our job time is dependent on the individual Appointment `instance` we need to pass the `handle_asynchronously` method a function that will calculate the time. In this case `@@REMINDER_TIME` is set to 30 minutes, but you can use any `Time` interval here.
+
+    Now when we create an appointment we will see a new row in the Jobs table, with a time and a method that needs to be fired. Additionally, delayed_job saves errors, and attempts so we can debug any weirdness before it fails. Once it fires a job it removes it from the database, so on a good day we should see an empty database.
+
+    ### All Done
+
+    Wow, that was quite an undertaking, but in reality we had to write very little code to get automated appointment reminders firing with Twilio. Be sure to check out the project buttons above to download the source for this application, view it on GitHub, or deploy it to Heroku to see it in action for yourself.
+
+    We'd also love to hear your feedback on this tutorial - [please reach out to us](mailto:help@twilio.com) with any questions you might have.  Thanks for checking out the tutorial!

@@ -1,0 +1,64 @@
+.step(data-title='Interacting with Appointments', data-file="app/views/appointments/index.html.erb", data-language="html")
+  :markdown
+    ### Interacting with Appointments
+
+    <blockquote>As a user, I want to view a list of all future appointments, and be able to delete those appointments</blockquote>
+
+    If you're an organization that handles a lot of appointments, you probably want to be able to view and manage them in a single interface. That's what we'll tackle in this user story. We'll create a UI to:
+
+    * Show all appointments
+    * Delete individual appoinments
+
+    Let's start by looking at the controller.
+
+.step(data-title='The boring controller', data-file='app/controllers/appointments_controller.rb', data-highlight='4-11')
+  :markdown
+    ### Showing a List of Appointments
+
+    At the controller level, all we'll do is get a list of all the appointments in the database and rendering them with a view. We should also add a prompt if there aren't any appointments, since this demo relies on there being at least one appointment in the future.
+
+    Let's go back to the template to see our list of appointments.
+
+.step(data-title='View all Appointments', data-file='app/views/appointments/index.html.erb', data-language="html", data-highlight="17-34")
+  :markdown
+    ### View All Appointments
+
+    The index view lists all of the appointments which are automatically ordered by `date_created`. The only thing we need to add to fulfill our user story is a delete button. We'll add the edit button just for kicks.
+
+    *URL Helpers*
+
+    You may notice that instead of hard-coding the urls for Edit and Delete we are using a Rails [URL helper](http://api.rubyonrails.org/classes/ActionView/Helpers/UrlHelper.html). If you view the rendered markup you will see these paths:
+
+    * `/appointments/(some ID)/edit` for edit
+    * `/appointments/(some ID)` for delete, with an HTTP DELETE method appended to the query
+
+    These URL helpers can take either an appointment object, or an ID. 
+
+    There are some other helpers in this code that Rails generates for us. The one I want to point out is the `:confirm` tag. The confirm tag is a data attribute that interrupts the actual `DELETE` request with a javascript alert. This is best-practices when calling DELETE on an object. If the user confirms we process the request normally, otherwise no action will be taken.
+
+    Now let's take a look at what happens when an appointment is actually deleted.
+
+.step(data-title='Looking up an Appointment', data-file='app/controllers/appointments_controller.rb', data-highlight='69-74')
+  :markdown
+    ### Looking up the Appointment
+
+    In this controller we need to pull up an appointment record and then delete it. Let's take a look at how we're grabbing the appointment first.
+
+    Since we're probably going to need an appointment record in most of our views, we should just create a private instance method that can be shared across multiple controllers. 
+
+    In `set_appointment` we use the id paramater, passed through from the route, to look up the appointment. Then at the top of our controller we use the `before_action` filter like so:
+    ```
+    before_action :set_appointment, only: [:show, :edit, :update, :destroy]
+    ```
+    This tells our application which controllers to apply this filter to. In this case we only need an appointment when the controller deals with a single appointment. 
+
+.step(data-title='Deleting an Appointment', data-file='app/controllers/appointments_controller.rb', data-highlight="61-67")
+  :markdown
+    ### Deleting an Appointment
+
+    Now that we have the appointment, we simply need to call `.destroy` on it. In a production app you may want to evaluate whether to use `.delete` instead of destroy, since both are valid ways to delete a database row in Rails. For our purposes we will use the less-eficient destroy for two reasons:
+
+    1. It handles database clean-up
+    1. It keeps the `Appointment` in memory, so that we can flash a success message to the user.
+
+    Now that we can interact with our appointments, let's dive into sending out reminders when one of these appointments is coming up.
