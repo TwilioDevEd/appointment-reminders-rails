@@ -1,6 +1,6 @@
 .step(data-title='Introduction')
   :markdown
-    ### How It Works
+    ## How It Works
 
     Ready to implement appointment reminders in your application? Here's how it works at a high level:
 
@@ -10,7 +10,7 @@
 
     1. At a configured time in advance of the appointment, an SMS reminder is sent out to the customer to remind them of their appointment
 
-    ### Building Blocks
+    ## Building Blocks
 
     Here are the technologies we'll use to get this done:
 
@@ -18,7 +18,7 @@
     * [The Messages Resource](/docs/api/rest/sending-sms) from Twilio's REST API to send text messages
     * [Delayed::Job](https://github.com/collectiveidea/delayed_job) to help us schedule and execute background tasks on a recurring basis
 
-    ### How To Read This Tutorial
+    ## How To Read This Tutorial
 
     To implement appointment reminders, we will be working through a series of [user stories](http://en.wikipedia.org/wiki/User_story) that describe how to fully implement appointment reminders in a web application. We'll walk through the code required to satisfy each story, and explore what we needed to add at each step.
 
@@ -26,7 +26,7 @@
 
 .step(data-title="About This Tutorial")
   :markdown
-    ### About This Tutorial
+    ## About This Tutorial
 
     In this tutorial, we will be working through a series of [user stories](http://en.wikipedia.org/wiki/User_story) that describe how to fully implement account verification in a web application. Our team implemented this example application in about 12 story points (roughly equivalent to 12 working hours).
 
@@ -35,7 +35,7 @@
 
 .step(data-title='The User Story')
   :markdown
-    ### Creating an Appointment
+    ## Creating an Appointment
 
     <blockquote>As a user, I want to create an appointment with a name, guest phone numbers, and a time in the future.</blockquote>
 
@@ -51,7 +51,7 @@
 
 .step(data-title='Rails Generator', data-file="Gemfile", data-language="ruby")
   :markdown
-    ### The Rails Generator
+    ## The Rails Generator
 
     Usually at this point in the tutorial we would build our model, view and controller from scratch (see [account verification](/docs/howto/walkthrough/account-verficiation/ruby/rails#2) as an example). But since the appointment model is so straight-forward, and we really just want the basic CRUD scaffolding, we're going to use the Rails generator for once.
 
@@ -73,7 +73,7 @@
 
 .step(data-title='Appointment Model', data-file='app/models/appointment.rb', data-highlight='1-4')
   :markdown
-    ### Appointment Model
+    ## Appointment Model
 
     The appointment model is pretty simple out of the box, but since humans will be interacting with it let's make sure we add some data validation.
 
@@ -89,7 +89,7 @@
 
 .step(data-title='Adding Routes', data-file='config/routes.rb')
   :markdown
-    ### Routes
+    ## Routes
 
     In a Rails application, [Resource Routing](http://guides.rubyonrails.org/routing.html#resource-routing-the-rails-default) automatically maps a resource's CRUD capabilities to its controller. Since our `Appointment` is an ActiveRecord resource, we can simply tell Rails that we want to use these routes, which will save us some lines of code.
 
@@ -97,7 +97,7 @@
 
 .step(data-title='New Appointment Form', data-file='app/views/appointments/_form.html.erb', data-language='erb')
   :markdown
-    ### New Appointment Form
+    ## New Appointment Form
 
     When we create a new appointment, we need a guest name, a phone number and a time. By using the rails `form_for` tag we can bind the form to the model object. This will generate the necessary html markup that will create a new Appointment on submit.
 
@@ -105,7 +105,7 @@
 
 .step(data-title='New Appointment Form', data-file='app/views/appointments/_form.html.erb', data-language='erb', data-highlight="32-45")
   :markdown
-    ### Date and Time
+    ## Date and Time
 
     One potential time-suck is figuring out how to handle the date and time of the appointment. In reality this is two separate user inputs, one for the day and one for the time of the appointment. We need a way to combine these two separate inputs into one paramater on the server-side. Again Rails handles this by giving us the `select_data` and `select_time` tags which the server automatically gathers into one paramater that maps to the `appointment.time` property.
 
@@ -113,7 +113,7 @@
 
 .step(data-title='Handling the Form POST', data-file='app/controllers/appointments_controller.rb', data-highlight='28-43')
   :markdown
-    ### Handling the Form POST
+    ## Handling the Form POST
 
     One of the other handy controllers created by our `Appointment` resource route was `appointment/create` which handles the POST from our form.
 

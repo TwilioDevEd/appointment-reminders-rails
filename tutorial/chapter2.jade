@@ -1,6 +1,6 @@
 .step(data-title='Interacting with Appointments', data-file="app/views/appointments/index.html.erb", data-language="erb")
   :markdown
-    ### Interacting with Appointments
+    ## Interacting with Appointments
 
     <blockquote>As a user, I want to view a list of all future appointments, and be able to delete those appointments</blockquote>
 
@@ -13,7 +13,7 @@
 
 .step(data-title='The boring controller', data-file='app/controllers/appointments_controller.rb', data-highlight='4-11')
   :markdown
-    ### Showing a List of Appointments
+    ## Showing a List of Appointments
 
     At the controller level, all we'll do is get a list of all the appointments in the database and rendering them with a view. We should also add a prompt if there aren't any appointments, since this demo relies on there being at least one appointment in the future.
 
@@ -21,7 +21,7 @@
 
 .step(data-title='View all Appointments', data-file='app/views/appointments/index.html.erb', data-language="erb", data-highlight="17-34")
   :markdown
-    ### View All Appointments
+    ## View All Appointments
 
     The index view lists all of the appointments which are automatically ordered by `date_created`. The only thing we need to add to fulfill our user story is a delete button. We'll add the edit button just for kicks.
 
@@ -40,7 +40,7 @@
 
 .step(data-title='Looking up an Appointment', data-file='app/controllers/appointments_controller.rb', data-highlight='69-74')
   :markdown
-    ### Looking up the Appointment
+    ## Looking up the Appointment
 
     In this controller we need to pull up an appointment record and then delete it. Let's take a look at how we're grabbing the appointment first.
 
@@ -54,7 +54,7 @@
 
 .step(data-title='Deleting an Appointment', data-file='app/controllers/appointments_controller.rb', data-highlight="61-67")
   :markdown
-    ### Deleting an Appointment
+    ## Deleting an Appointment
 
     Now that we have the appointment, we simply need to call `.destroy` on it. In a production app you may want to evaluate whether to use `.delete` instead of destroy, since both are valid ways to delete a database row in Rails. For our purposes we will use the less-eficient destroy for two reasons:
 

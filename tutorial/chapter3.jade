@@ -1,6 +1,6 @@
 .step(data-title='Sending the Reminder', data-file="app/models/appointment.rb", data-language="ruby")
   :markdown
-    ### Sending the Reminder
+    ## Sending the Reminder
 
     <blockquote>As an appointment system, I want to notify a user via SMS an arbitrary interval before a future appointment</blockquote>
 
@@ -13,7 +13,7 @@
 
 .step(data-title='Working with Delayed Job', data-file='Gemfile', data-language="ruby", data-highlight='32-36')
   :markdown
-    ### Working with Delayed::Job
+    ## Working with Delayed::Job
 
     As we mentioned before, there are a lot of ways to implement a scheduler/worker, but in Rails `Delayed::Job` is the most established. If you have found a better way to schedule jobs in Rails please let [us know](mailto:help@twilio.com). 
 
@@ -29,7 +29,7 @@
 
 .step(data-title='Sending a Reminder', data-file='app/models/appointment.rb', data-highlight="6-22")
   :markdown
-    ### Sending a Reminder
+    ## Sending a Reminder
 
     The next step in sending a reminder to our user is creating the script that we'll fire at some interval before the appointment time. We will end up wanting to schedule this reminder when the appointment is created, so it makes sense to write it as a method on the Appointment model. 
 
@@ -49,7 +49,7 @@
 
 .step(data-title='Scheduling a Reminder', data-file='app/models/appointment.rb', data-highlight='24-28')
   :markdown
-    ### Scheduling a Reminder
+    ## Scheduling a Reminder
 
     Well we're almost done, now all we need to do is write an extremely complicated schedule controller that does the following:
     * Look up each future appointment
@@ -61,7 +61,7 @@
 
     Now when we create an appointment we will see a new row in the Jobs table, with a time and a method that needs to be fired. Additionally, delayed_job saves errors, and attempts so we can debug any weirdness before it fails. Once it fires a job it removes it from the database, so on a good day we should see an empty database.
 
-    ### All Done
+    ## All Done
 
     Wow, that was quite an undertaking, but in reality we had to write very little code to get automated appointment reminders firing with Twilio. Be sure to check out the project buttons above to download the source for this application, view it on GitHub, or deploy it to Heroku to see it in action for yourself.
 
