@@ -1,9 +1,8 @@
 .step(data-title='Sending the Reminder', data-file="app/models/appointment.rb", data-language="ruby")
   h2 Sending the Reminder
-
-  blockquote As an appointment system, I want to notify a user via SMS an arbitrary interval before a future appointment.
+  blockquote 
+    | As an appointment system, I want to notify a user via SMS an arbitrary interval before a future appointment.
   :markdown
-
     There are a lot of ways to build this part of our application, but no matter how you implement it there should be two moving parts:
 
     * A script that checks the database for any appointment that is upcoming, then sends an sms
