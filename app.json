@@ -21,9 +21,19 @@
       "description": "The Twilio phone number you are using for this app. You can get one here: https://www.twilio.com/user/account/phone-numbers/incoming",
       "value": "+15005550006",
       "required": true
+    },
+    "HEROKU_API_KEY": {
+      "description": "Used for workless gem. You can find this at: https://dashboard.heroku.com/account",
+      "value": "enter_your_api_key_here",
+      "required": true
+    },
+    "APP_NAME": {
+      "description": "Used for workless gem. Define one above where it says 'App Name (optional)'.",
+      "value": "app_name",
+      "required": true
     }
   },
   "scripts": {
-    "postdeploy": "bundle exec rake db:create db:migrate"
+    "postdeploy": "bundle exec rake db:migrate"
   }
 }
