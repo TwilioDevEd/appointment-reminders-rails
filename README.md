@@ -4,6 +4,8 @@
 
 Use Twilio to create automatic appointment reminders for your businesses users.
 
+[Read the full tutorial here](https://www.twilio.com/docs/tutorials/walkthrough/appointment-reminders/ruby/rails)!
+
 ## Running the application
 
 Clone this repository and cd into the directory then.
