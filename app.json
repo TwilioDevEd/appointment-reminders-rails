@@ -2,6 +2,7 @@
   "name": "Appointment Reminders",
   "description": "Appointment Reminders in Rails with Twilio",
   "repository": "https://github.com/TwilioDevEd/appointment-reminders-rails",
+  "success_url": "/landing.html",
   "keywords": [
     "sms", "phone", "twilio", "appointment reminders", "automation"
   ],
@@ -35,6 +36,5 @@
   },
   "scripts": {
     "postdeploy": "bundle exec rake db:migrate"
-  },
-  "success_url": "/landing.html",
+  }
 }
