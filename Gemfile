@@ -24,7 +24,7 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 
 # Use Twilio
-gem 'twilio-ruby'
+gem 'twilio-ruby', '~> 5.0.0.rc17'
 
 # Use bootstrap themes
 gem 'twitter-bootstrap-rails', :git => 'git://github.com/seyhunak/twitter-bootstrap-rails.git'
