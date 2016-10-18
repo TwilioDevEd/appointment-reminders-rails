@@ -26,7 +26,7 @@
 
     Now we're ready to create the actual job.
 
-.step(data-title='Sending a Reminder', data-file='app/models/appointment.rb', data-highlight="6-22")
+.step(data-title='Sending a Reminder', data-file='app/models/appointment.rb', data-highlight="6-20")
   :markdown
     ## Sending a Reminder
 
@@ -46,22 +46,41 @@
 
     Because we made our reminder script a method on the model we get one very handy tool; a [callback](http://api.rubyonrails.org/classes/ActiveRecord/Callbacks.html). By using the `before_create` callback we ensure that the :reminder gets called whenever an Appointment is created. The last step is making sure this callback always ends up being scheduled by Delayed Job.
 
-.step(data-title='Scheduling a Reminder', data-file='app/models/appointment.rb', data-highlight='24-28')
+.step(data-title='Scheduling a Reminder', data-file='app/models/appointment.rb', data-highlight='22-27')
   :markdown
     ## Scheduling a Reminder
 
     Well we're almost done, now all we need to do is write an extremely complicated schedule controller that does the following:
     * Look up each future appointment
     * Add it to a Jobs table
-    * Check whether it is within the `@@REMINDER_TIME` interval
+    * Check whether it is within the `minutes_before_appointment` interval
     * Fire the reminder method
 
-    Oh wait, [Delayed Job](https://github.com/collectiveidea/delayed_job#queuing-jobs) does this for free in one handy method called `handle_asynchronously` which tells Delayed Job to schedule this job whenever this method is fired. Since our job time is dependent on the individual Appointment `instance` we need to pass the `handle_asynchronously` method a function that will calculate the time. In this case `@@REMINDER_TIME` is set to 30 minutes, but you can use any `Time` interval here.
+    Oh wait, [Delayed Job](https://github.com/collectiveidea/delayed_job#queuing-jobs) does this
+    for free in one handy method called `handle_asynchronously` which tells
+    Delayed Job to schedule this job whenever this method is fired. Since our
+    job time is dependent on the individual Appointment `instance` we need to
+    pass the `handle_asynchronously` method a function that will calculate the
+    time. In this case `minutes_before_appointment` is set to 30 minutes, but you can use any `Time` interval here.
 
-    Now when we create an appointment we will see a new row in the Jobs table, with a time and a method that needs to be fired. Additionally, delayed_job saves errors, and attempts so we can debug any weirdness before it fails. Once it fires a job it removes it from the database, so on a good day we should see an empty database.
+    Now when we create an appointment we will see a new row in the Jobs
+    table, with a time and a method that needs to be fired. Additionally,
+    delayed_job saves errors, and attempts so we can debug any weirdness
+    before it fails. Once it fires a job it removes it from the database, so
+    on a good day we should see an empty database.
 
     ## All Done
 
-    Wow, that was quite an undertaking, but in reality we had to write very little code to get automated appointment reminders firing with Twilio. Be sure to check out the project buttons above to download the source for this application, view it on GitHub, or deploy it to Heroku to see it in action for yourself.
+    Wow, that was quite an undertaking, but in reality we had to write very
+    little code to get automated appointment reminders firing with Twilio.
+    Be sure to check out the project buttons above to download the source
+    for this application, view it on GitHub, or deploy it to Heroku to see
+    it in action for yourself.
 
-    We'd also love to hear your feedback on this tutorial - [please reach out to us](mailto:help@twilio.com) with any questions you might have.  Thanks for checking out the tutorial!
+
+    ## Did this help?
+
+    Thanks for checking out this tutorial! If you have any feedback
+    to share with us, we'd love to hear it. [Contact the Twilio Developer
+    Education Team](mailto:deved-oss@twilio.com) to let us know what you think.
+
