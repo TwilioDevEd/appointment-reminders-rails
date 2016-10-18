@@ -1,12 +1,12 @@
 class AppointmentsController < ApplicationController
-  before_action :set_appointment, only: [:show, :edit, :update, :destroy]
+  before_action :find_appointment, only: [:show, :edit, :update, :destroy]
 
   # GET /appointments
   # GET /appointments.json
   def index
     @appointments = Appointment.all
-    if @appointments.length == 0
-      flash[:alert] = "You have no appointments. Create one now to get started."
+    if @appointments.length.zero?
+      flash[:alert] = 'You have no appointments. Create one now to get started.'
     end
   end
 
@@ -30,7 +30,7 @@ class AppointmentsController < ApplicationController
   def create
     Time.zone = appointment_params[:time_zone]
     @appointment = Appointment.new(appointment_params)
-    
+
     respond_to do |format|
       if @appointment.save
         format.html { redirect_to @appointment, notice: 'Appointment was successfully created.' }
@@ -67,14 +67,14 @@ class AppointmentsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    # See above ---> before_action :set_appointment, only: [:show, :edit, :update, :destroy]
-    def set_appointment
-      @appointment = Appointment.find(params[:id])
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  # See above ---> before_action :set_appointment, only: [:show, :edit, :update, :destroy]
+  def find_appointment
+    @appointment = Appointment.find(params[:id])
+  end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def appointment_params
-      params.require(:appointment).permit(:name, :phone_number, :time, :time_zone)
-    end
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def appointment_params
+    params.require(:appointment).permit(:name, :phone_number, :time, :time_zone)
+  end
 end
