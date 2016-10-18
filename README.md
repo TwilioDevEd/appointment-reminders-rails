@@ -1,36 +1,78 @@
-# Appointment Reminders
+<a href="https://www.twilio.com">
+  <img src="https://static0.twilio.com/marketing/bundles/marketing/img/logos/wordmark-red.svg" alt="Twilio" width="250" />
+</a>
 
-![godfather appointment](app/assets/images/the-godfather-1.jpg "Don't miss an appointment")
+# Appointment Reminders with Ruby on Rails and Twilio
 
-Use Twilio to create automatic appointment reminders for your businesses users.
+[![Build Status](https://travis-ci.org/TwilioDevEd/appointment-reminders-rails.svg?branch=master)](https://travis-ci.org/TwilioDevEd/appointment-reminders-rails)
 
-## Running the application
+Make sure your customers show up for their scheduled appointments with automated
+reminders. Deliver reminders via SMS text messages that don't get ignored like
+your e-mails.
 
-Clone this repository and cd into the directory then.
+[Read the full tutorial here!](https://www.twilio.com/docs/tutorials/walkthrough/appointment-reminders/ruby/rails)
 
-```
-$ bundle install
-$ rake db:create db:migrate
-$ export TWILIO_ACCOUNT_SID=your account sid
-$ export TWILIO_AUTH_TOKEN=your auth token
-$ export TWILIO_NUMBER=+16515559999
-$ rake test
-$ rails server
-```
+## Fastest Deploy
 
-Then visit the application at http://localhost:3000/
+Use Heroku to deploy this app immediately:
 
-## Deploy to Heroku
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/TwilioDevEd/appointment-reminders-rails)
 
-Hit the button!
+## Local development
 
-[![Deploy](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy)
+This project is built using [Ruby on Rails](http://rubyonrails.org/) Framework.
 
-## Dependencies
+1. First clone this repository and `cd` into it.
 
-This application relies heavily on these awesome third-party gems:
-* twilio-ruby
-* delayed_job
-* twitter-bootstrap-rails
+   ```bash
+   git clone git@github.com:TwilioDevEd/appointment-reminders-rails.git
+   cd appointment-reminders-rails
+   ```
 
-Please visit these libraries and pay your respects.
+1. Install the dependencies.
+
+   ```bash
+   $ bundle install
+   ```
+
+1. Copy the `.env.example` file to `.env`, and edit it including your credentials
+   for the Twilio API (found at https://www.twilio.com/console/account/settings).
+   You will also need a [Twilio Number](https://www.twilio.com/console/phone-numbers/incoming).
+
+   Run `source .env` to export the environment variables.
+
+1. Create the database and run migrations.
+
+   Make sure you have installed [PostgreSQL](http://www.postgresql.org/). If on
+   a Mac, I recommend [Postgres.app](http://postgresapp.com).
+
+   ```bash
+   $ bundle exec rake db:setup
+   ```
+
+1. Make sure the tests succeed.
+
+   ```bash
+   $ bundle exec rake
+   ```
+
+1. Start delayed jobs.
+
+   ```bash
+   $ ./bin/delayed_job start
+   ```
+
+1. Start the development server.
+
+   ```bash
+   $ bundle exec rails s
+   ```
+
+1. Check it out at [http://localhost:3000](http://localhost:3000).
+
+
+## Meta
+
+* No warranty expressed or implied. Software is as is. Diggity.
+* [MIT License](http://www.opensource.org/licenses/mit-license.html)
+* Lovingly crafted by Twilio Developer Education.
