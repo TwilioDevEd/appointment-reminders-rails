@@ -75,6 +75,8 @@ GEM
     erubis (2.7.0)
     excon (0.44.4)
     execjs (2.4.0)
+    faraday (0.12.1)
+      multipart-post (>= 1.2, < 3)
     globalid (0.3.3)
       activesupport (>= 4.1.0)
     heroku-api (0.3.22)
@@ -90,12 +92,13 @@ GEM
       railties (>= 4.2.0)
       thor (>= 0.14, < 2.0)
     json (1.8.2)
-    jwt (1.4.1)
+    jwt (1.5.6)
     less (2.6.0)
       commonjs (~> 0.2.7)
     less-rails (2.6.0)
       actionpack (>= 3.1)
       less (~> 2.6.0)
+    libxml-ruby (3.0.0)
     loofah (2.0.1)
       nokogiri (>= 1.5.9)
     mail (2.6.3)
@@ -104,6 +107,7 @@ GEM
     mini_portile (0.6.2)
     minitest (5.5.1)
     multi_json (1.11.0)
+    multipart-post (2.0.0)
     nokogiri (1.6.6.2)
       mini_portile (~> 0.6.0)
     pg (0.18.1)
@@ -166,10 +170,10 @@ GEM
     tilt (1.4.1)
     turbolinks (2.5.3)
       coffee-rails
-    twilio-ruby (3.15.2)
-      builder (>= 2.1.2)
-      jwt (~> 1.0)
-      multi_json (>= 1.3.0)
+    twilio-ruby (5.0.0.rc23)
+      faraday (~> 0.9)
+      jwt (~> 1.5)
+      libxml-ruby (= 3.0.0)
     tzinfo (1.2.2)
       thread_safe (~> 0.1)
     uglifier (2.7.1)
@@ -202,8 +206,11 @@ DEPENDENCIES
   sdoc (~> 0.4.0)
   spring
   turbolinks
-  twilio-ruby
+  twilio-ruby (= 5.0.0.rc23)
   twitter-bootstrap-rails!
   uglifier (>= 1.3.0)
   web-console (~> 2.0)
   workless (~> 1.2.2)
+
+BUNDLED WITH
+   1.15.1
