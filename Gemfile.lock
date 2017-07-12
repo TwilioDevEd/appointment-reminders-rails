@@ -170,7 +170,7 @@ GEM
     tilt (1.4.1)
     turbolinks (2.5.3)
       coffee-rails
-    twilio-ruby (5.0.0.rc23)
+    twilio-ruby (5.0.0.rc26)
       faraday (~> 0.9)
       jwt (~> 1.5)
       libxml-ruby (= 3.0.0)
@@ -206,7 +206,7 @@ DEPENDENCIES
   sdoc (~> 0.4.0)
   spring
   turbolinks
-  twilio-ruby (= 5.0.0.rc23)
+  twilio-ruby (= 5.0.0.rc26)
   twitter-bootstrap-rails!
   uglifier (>= 1.3.0)
   web-console (~> 2.0)
