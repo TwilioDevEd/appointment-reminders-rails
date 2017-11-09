@@ -12,12 +12,6 @@ your e-mails.
 
 [Read the full tutorial here!](https://www.twilio.com/docs/tutorials/walkthrough/appointment-reminders/ruby/rails)
 
-## Fastest Deploy
-
-Use Heroku to deploy this app immediately:
-
-[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/TwilioDevEd/appointment-reminders-rails)
-
 ## Local development
 
 This project is built using [Ruby on Rails](http://rubyonrails.org/) Framework.
