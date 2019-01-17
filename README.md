@@ -28,6 +28,11 @@ This project is built using [Ruby on Rails](http://rubyonrails.org/) Framework.
    ```bash
    $ bundle install
    ```
+   2.1. Known issues:
+      - Ruby versions above 2.3 have shown uncompatibilities. Ruby version `2.3` is recommended when running this code.
+      - Make sure you have the correct bundler version installed: `gem install bundler:1.5.11`
+      - If having problems with `json` gem do: `bundle update json`
+      - If having problems with `nokogiri` do: `gem install nokogiri -v '1.6.6.2' -- --use-system-libraries=true --with-xml2-include="$(xcrun --show-sdk-path)"/usr/include/libxml2`
 
 1. Copy the `.env.example` file to `.env`, and edit it including your credentials
    for the Twilio API (found at https://www.twilio.com/console/account/settings).
@@ -44,7 +49,7 @@ This project is built using [Ruby on Rails](http://rubyonrails.org/) Framework.
    $ bundle exec rake db:setup
    ```
 
-1. Make sure the tests succeed.
+1. Make sure the tests succeed. 
 
    ```bash
    $ bundle exec rake
