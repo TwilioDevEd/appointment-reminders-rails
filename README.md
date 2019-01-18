@@ -1,77 +1,24 @@
-<a href="https://www.twilio.com">
-  <img src="https://static0.twilio.com/marketing/bundles/marketing/img/logos/wordmark-red.svg" alt="Twilio" width="250" />
-</a>
+# README
 
-# Appointment Reminders with Ruby on Rails and Twilio
+This README would normally document whatever steps are necessary to get the
+application up and running.
 
-[![Build Status](https://travis-ci.org/TwilioDevEd/appointment-reminders-rails.svg?branch=master)](https://travis-ci.org/TwilioDevEd/appointment-reminders-rails)
+Things you may want to cover:
 
-Make sure your customers show up for their scheduled appointments with automated
-reminders. Deliver reminders via SMS text messages that don't get ignored like
-your e-mails.
+* Ruby version
 
-[Read the full tutorial here!](https://www.twilio.com/docs/tutorials/walkthrough/appointment-reminders/ruby/rails)
+* System dependencies
 
-## Local development
+* Configuration
 
-This project is built using [Ruby on Rails](http://rubyonrails.org/) Framework.
+* Database creation
 
-1. First clone this repository and `cd` into it.
+* Database initialization
 
-   ```bash
-   git clone git@github.com:TwilioDevEd/appointment-reminders-rails.git
-   cd appointment-reminders-rails
-   ```
+* How to run the test suite
 
-1. Install the dependencies.
+* Services (job queues, cache servers, search engines, etc.)
 
-   ```bash
-   $ bundle install
-   ```
-   2.1. Known issues:
-      - Ruby versions above 2.3 have shown uncompatibilities. Ruby version `2.3` is recommended when running this code.
-      - Make sure you have the correct bundler version installed: `gem install bundler:1.5.11`
-      - If having problems with `json` gem do: `bundle update json`
-      - If having problems with `nokogiri` do: `gem install nokogiri -v '1.6.6.2' -- --use-system-libraries=true --with-xml2-include="$(xcrun --show-sdk-path)"/usr/include/libxml2`
+* Deployment instructions
 
-1. Copy the `.env.example` file to `.env`, and edit it including your credentials
-   for the Twilio API (found at https://www.twilio.com/console/account/settings).
-   You will also need a [Twilio Number](https://www.twilio.com/console/phone-numbers/incoming).
-
-   Run `source .env` to export the environment variables.
-
-1. Create the database and run migrations.
-
-   Make sure you have installed [PostgreSQL](http://www.postgresql.org/). If on
-   a Mac, I recommend [Postgres.app](http://postgresapp.com).
-
-   ```bash
-   $ bundle exec rake db:setup
-   ```
-
-1. Make sure the tests succeed. 
-
-   ```bash
-   $ bundle exec rake
-   ```
-
-1. Start delayed jobs.
-
-   ```bash
-   $ ./bin/delayed_job start
-   ```
-
-1. Start the development server.
-
-   ```bash
-   $ bundle exec rails s
-   ```
-
-1. Check it out at [http://localhost:3000](http://localhost:3000).
-
-
-## Meta
-
-* No warranty expressed or implied. Software is as is. Diggity.
-* [MIT License](http://www.opensource.org/licenses/mit-license.html)
-* Lovingly crafted by Twilio Developer Education.
+* ...
