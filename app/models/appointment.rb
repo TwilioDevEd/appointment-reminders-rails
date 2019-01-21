@@ -11,11 +11,11 @@ class Appointment < ActiveRecord::Base
     account_sid = ENV['TWILIO_ACCOUNT_SID']
     @client = Twilio::REST::Client.new account_sid, ENV['TWILIO_AUTH_TOKEN']
     time_str = ((self.time).localtime).strftime("%I:%M%p on %b. %d, %Y")
-    reminder = "Hi #{self.name}. Just a reminder that you have an appointment coming up at #{time_str}."
+    body = "Hi #{self.name}. Just a reminder that you have an appointment coming up at #{time_str}."
     message = @client.api.account(account_sid).messages.create(
       :from => @twilio_number,
       :to => self.phone_number,
-      :body => reminder,
+      :body => body,
     )
   end
 
