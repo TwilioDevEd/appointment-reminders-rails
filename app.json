@@ -1,0 +1,40 @@
+{
+  "name": "Appointment Reminders",
+  "description": "Appointment Reminders in Rails with Twilio",
+  "repository": "https://github.com/TwilioDevEd/appointment-reminders-rails",
+  "success_url": "/landing.html",
+  "keywords": [
+    "sms", "phone", "twilio", "appointment reminders", "automation"
+  ],
+  "addons": ["heroku-postgresql:hobby-dev"],
+  "env": {
+    "TWILIO_ACCOUNT_SID": {
+      "description": "Your Twilio account secret ID, you can find at: https://www.twilio.com/user/account",
+      "value": "enter_your_account_sid_here",
+      "required": true
+    },
+    "TWILIO_AUTH_TOKEN": {
+      "description": "Your secret Twilio Auth token, you can find at: https://www.twilio.com/user/account",
+      "value": "enter_your_auth_token_here",
+      "required": true
+    },
+    "TWILIO_NUMBER": {
+      "description": "The Twilio phone number you are using for this app. You can get one here: https://www.twilio.com/user/account/phone-numbers/incoming",
+      "value": "+15005550006",
+      "required": true
+    },
+    "HEROKU_API_KEY": {
+      "description": "Used for workless gem. You can find this at: https://dashboard.heroku.com/account",
+      "value": "enter_your_api_key_here",
+      "required": true
+    },
+    "APP_NAME": {
+      "description": "Used for workless gem. Define one above where it says 'App Name (optional)'.",
+      "value": "app_name",
+      "required": true
+    }
+  },
+  "scripts": {
+    "postdeploy": "bundle exec rake db:migrate"
+  }
+}
