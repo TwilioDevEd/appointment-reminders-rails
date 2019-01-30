@@ -50,15 +50,27 @@ This project is built using [Ruby on Rails](http://rubyonrails.org/) Framework.
    $ bundle exec rake
    ```
 
-1. Start delayed jobs.
+At this point you are ready to run the code:
+
+1. First start the delayed jobs deamon:
 
    ```bash
+   $ cd appointment-reminders-rails
+   $ source .env
    $ ./bin/delayed_job start
    ```
 
-1. Start the development server.
+   You can `tail` the log for this process:
 
    ```bash
+   $ tail -f log/delayed_job.log
+   ```
+
+1. Then start the development server:
+
+   ```bash
+   $ cd appointment-reminders-rails
+   $ source .env
    $ bundle exec rails s
    ```
 

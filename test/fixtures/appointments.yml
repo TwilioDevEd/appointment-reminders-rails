@@ -1,11 +1,7 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  name: MyString
-  phone_number: MyString
-  time: 2015-03-12 10:33:18
-
-two:
-  name: MyString
-  phone_number: MyString
-  time: 2015-03-12 10:33:18
+  id: 1
+  name: TestOne
+  phone_number: "a_phone_number"
+  time: 2018-03-12 10:33:18
