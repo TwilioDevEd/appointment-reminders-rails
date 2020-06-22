@@ -52,8 +52,8 @@ jobs:
           npm install
       - name: Run tests
         run: |
-          bundle exec rails db:setup
           cp .env.example .env
+          bundle exec rails db:setup
           bundle exec rails test
         env:
           RAILS_ENV: test
