@@ -27,3 +27,8 @@
 /config/master.key
 
 .env
+db/development.sqlite3
+db/test.sqlite3
+vendor/bundle
+
+.tool-versions

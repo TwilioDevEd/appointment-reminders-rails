@@ -1,0 +1,24 @@
+{
+  "application.js": "/packs-test/js/application-2be2370d35e0b3907331.js",
+  "application.js.map": "/packs-test/js/application-2be2370d35e0b3907331.js.map",
+  "entrypoints": {
+    "application": {
+      "js": [
+        "/packs-test/js/application-2be2370d35e0b3907331.js"
+      ],
+      "js.map": [
+        "/packs-test/js/application-2be2370d35e0b3907331.js.map"
+      ]
+    },
+    "send-sms": {
+      "js": [
+        "/packs-test/js/send-sms-df3be02f15d2532451cc.js"
+      ],
+      "js.map": [
+        "/packs-test/js/send-sms-df3be02f15d2532451cc.js.map"
+      ]
+    }
+  },
+  "send-sms.js": "/packs-test/js/send-sms-df3be02f15d2532451cc.js",
+  "send-sms.js.map": "/packs-test/js/send-sms-df3be02f15d2532451cc.js.map"
+}

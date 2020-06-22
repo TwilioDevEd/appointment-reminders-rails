@@ -1,0 +1,24 @@
+{
+  "application.js": "/packs/js/application-40f75ac429e06d738089.js",
+  "application.js.map": "/packs/js/application-40f75ac429e06d738089.js.map",
+  "entrypoints": {
+    "application": {
+      "js": [
+        "/packs/js/application-40f75ac429e06d738089.js"
+      ],
+      "js.map": [
+        "/packs/js/application-40f75ac429e06d738089.js.map"
+      ]
+    },
+    "send-sms": {
+      "js": [
+        "/packs/js/send-sms-951c6ba158f7ab730490.js"
+      ],
+      "js.map": [
+        "/packs/js/send-sms-951c6ba158f7ab730490.js.map"
+      ]
+    }
+  },
+  "send-sms.js": "/packs/js/send-sms-951c6ba158f7ab730490.js",
+  "send-sms.js.map": "/packs/js/send-sms-951c6ba158f7ab730490.js.map"
+}
