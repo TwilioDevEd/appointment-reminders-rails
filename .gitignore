@@ -34,5 +34,5 @@ vendor/bundle
 .tool-versions
 
 /public/packs
-/public/packs-test
-/public/assets
+!/public/packs/manifest.json
+!/public/packs-test/manifest.json
