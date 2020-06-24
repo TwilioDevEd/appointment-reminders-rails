@@ -18,9 +18,9 @@ your e-mails.
 
 Implementations in other languages:
 
-| .NET | Java | Python (Django) | Python (Flask) | PHP | Ruby | Node |
-| :--- | :--- | :-----          | :--            | :---| :--- | :--  |
-| [Done](https://github.com/TwilioDevEd/appointment-reminders-csharp)  | [Done](https://github.com/TwilioDevEd/appointment-reminders-java)  | [Done](https://github.com/TwilioDevEd/appointment-reminders-django)  | [Done](https://github.com/TwilioDevEd/appointment-reminders-flask) | [Done](https://github.com/TwilioDevEd/appointment-reminders-laravel) | [Done](https://github.com/TwilioDevEd/appointment-reminders-rails) | TBD |
+| .NET | Java | Python (Django) | Python (Flask) | PHP | Node |
+| :--- | :--- | :-----          | :--            | :-- | :-- |
+| [Done](https://github.com/TwilioDevEd/appointment-reminders-csharp)  | [Done](https://github.com/TwilioDevEd/appointment-reminders-java)  | [Done](https://github.com/TwilioDevEd/appointment-reminders-django)  | [Done](https://github.com/TwilioDevEd/appointment-reminders-flask) | [Done](https://github.com/TwilioDevEd/appointment-reminders-laravel) | TBD |
 
 ## Set up
 
