@@ -69,9 +69,6 @@ This project is built using [Ruby on Rails](http://rubyonrails.org/) Framework.
 
 4. Create the database and run migrations.
 
-   Make sure you have installed [PostgreSQL](http://www.postgresql.org/). If on
-   a Mac, I recommend [Postgres.app](http://postgresapp.com).
-
    ```bash
    make database
    ```
