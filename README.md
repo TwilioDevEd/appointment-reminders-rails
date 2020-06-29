@@ -4,7 +4,7 @@
 
 # Appointment Reminders with Ruby on Rails and Twilio
 
-![](https://github.com/TwilioDevEd/appointment-reminders-rails/workflows/Ruby/badge.svg)
+[![Actions Status](https://github.com/TwilioDevEd/appointment-reminders-rails/workflows/Rails%20CI/badge.svg)](https://github.com/TwilioDevEd/appointment-reminders-rails/actions)
 
 > This template is part of Twilio CodeExchange. If you encounter any issues with this code, please open an issue at [github.com/twilio-labs/code-exchange/issues](https://github.com/twilio-labs/code-exchange/issues).
 
@@ -18,9 +18,9 @@ your e-mails.
 
 Implementations in other languages:
 
-| .NET | Java | Python (Django) | Python (Flask) | PHP | Ruby | Node |
-| :--- | :--- | :-----          | :--            | :---| :--- | :--  |
-| [Done](https://github.com/TwilioDevEd/appointment-reminders-csharp)  | [Done](https://github.com/TwilioDevEd/appointment-reminders-java)  | [Done](https://github.com/TwilioDevEd/appointment-reminders-django)  | [Done](https://github.com/TwilioDevEd/appointment-reminders-flask) | [Done](https://github.com/TwilioDevEd/appointment-reminders-laravel) | [Done](https://github.com/TwilioDevEd/appointment-reminders-rails) | TBD |
+| .NET | Java | Python| PHP | Node |
+| :--- | :--- | :---- | :-- | :--- |
+| [Done](https://github.com/TwilioDevEd/appointment-reminders-csharp)  | [Done](https://github.com/TwilioDevEd/appointment-reminders-java)  | [Done](https://github.com/TwilioDevEd/appointment-reminders-django) | [Done](https://github.com/TwilioDevEd/appointment-reminders-laravel) | [Done](https://github.com/twilio-labs/sample-appointment-reminders-node) |
 
 ## Set up
 
@@ -28,6 +28,7 @@ Implementations in other languages:
 - [Ruby](https://www.ruby-lang.org/) **2.6.x** version.
 - [Sqlite](https://www.sqlite.org/index.html).
 - [Node.js](https://nodejs.org/en/) **10.x** or **12.x** version.
+- A Twilio account - [sign up](https://www.twilio.com/try-twilio)
 
 ### Twilio Account Settings
 
