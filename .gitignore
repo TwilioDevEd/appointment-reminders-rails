@@ -27,3 +27,14 @@
 /config/master.key
 
 .env
+db/development.sqlite3
+db/test.sqlite3
+vendor/bundle
+
+.tool-versions
+
+/public/packs
+/public/packs-test
+/yarn-error.log
+yarn-debug.log*
+.yarn-integrity

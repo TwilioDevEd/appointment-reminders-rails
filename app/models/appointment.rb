@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Appointment < ActiveRecord::Base
   validates :name, presence: true
   validates :phone_number, presence: true

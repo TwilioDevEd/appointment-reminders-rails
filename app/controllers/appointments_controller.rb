@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class AppointmentsController < ApplicationController
   before_action :find_appointment, only: [:show, :edit, :update, :destroy]
 
@@ -12,7 +14,7 @@ class AppointmentsController < ApplicationController
 
   # GET /appointments/1
   # GET /appointments/1.json
-  def show
+  def show 
   end
 
   # GET /appointments/new
