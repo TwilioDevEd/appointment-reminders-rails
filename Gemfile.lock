@@ -151,7 +151,7 @@ GEM
     parser (2.7.1.4)
       ast (~> 2.4.1)
     popper_js (1.16.0)
-    puma (4.3.5)
+    puma (4.3.6)
       nio4r (~> 2.0)
     rack (2.2.3)
     rack-proxy (0.6.5)
@@ -272,7 +272,7 @@ DEPENDENCIES
   jquery-rails
   listen (>= 3.0.5, < 3.2)
   overcommit (~> 0.52.1)
-  puma (~> 4.1)
+  puma (~> 4.3)
   rails (~> 6.0.2, >= 6.0.2.1)
   rails-controller-testing
   rubocop (~> 0.80.0)
