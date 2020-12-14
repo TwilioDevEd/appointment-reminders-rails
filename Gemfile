@@ -58,7 +58,7 @@ group :development do
   gem 'spring-watcher-listen', '~> 2.0.0'
 
   gem 'overcommit', '~> 0.52.1', require: false
-  gem 'rubocop', '~> 0.80.0', require: false
+  gem 'rubocop', '~> 1.6.1', require: false
   gem 'rubocop-rails', '~> 2.4', require: false
 end
 
