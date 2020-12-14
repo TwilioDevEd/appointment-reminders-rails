@@ -67,12 +67,12 @@ GEM
       tzinfo (~> 1.1)
       zeitwerk (~> 2.2, >= 2.2.2)
     ast (2.4.1)
-    autoprefixer-rails (9.8.4)
+    autoprefixer-rails (10.1.0.0)
       execjs
     bindex (0.8.1)
     bootsnap (1.4.6)
       msgpack (~> 1.0)
-    bootstrap (4.5.0)
+    bootstrap (4.5.3)
       autoprefixer-rails (>= 9.1.0)
       popper_js (>= 1.14.3, < 2)
       sassc-rails (>= 2.0.0)
@@ -262,7 +262,7 @@ PLATFORMS
 
 DEPENDENCIES
   bootsnap (>= 1.4.2)
-  bootstrap (~> 4.4)
+  bootstrap (~> 4.5)
   byebug
   coffee-rails (~> 5.0)
   daemons
