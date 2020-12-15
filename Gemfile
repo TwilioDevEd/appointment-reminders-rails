@@ -59,7 +59,7 @@ group :development do
 
   gem 'overcommit', '~> 0.57.0', require: false
   gem 'rubocop', '~> 1.6.1', require: false
-  gem 'rubocop-rails', '~> 2.4', require: false
+  gem 'rubocop-rails', '~> 2.9', require: false
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
