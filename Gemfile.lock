@@ -200,7 +200,7 @@ GEM
       ffi (~> 1.0)
     regexp_parser (2.0.3)
     rexml (3.2.4)
-    rubocop (1.8.0)
+    rubocop (1.8.1)
       parallel (~> 1.10)
       parser (>= 3.0.0.0)
       rainbow (>= 2.2.2, < 4.0)
@@ -285,7 +285,7 @@ DEPENDENCIES
   puma (~> 5.1)
   rails (~> 6.1.1)
   rails-controller-testing
-  rubocop (~> 1.8.0)
+  rubocop (~> 1.8.1)
   rubocop-rails (~> 2.9)
   sass-rails (>= 6)
   spring
