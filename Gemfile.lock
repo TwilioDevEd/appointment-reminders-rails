@@ -247,7 +247,7 @@ GEM
     turbolinks (5.2.1)
       turbolinks-source (~> 5.2)
     turbolinks-source (5.2.0)
-    twilio-ruby (5.49.0)
+    twilio-ruby (5.50.0)
       faraday (>= 0.9, < 2.0)
       jwt (>= 1.5, <= 2.5)
       nokogiri (>= 1.6, < 2.0)
@@ -294,7 +294,7 @@ DEPENDENCIES
   spring-watcher-listen (~> 2.0.0)
   sqlite3 (~> 1.4)
   turbolinks (~> 5)
-  twilio-ruby (~> 5.49)
+  twilio-ruby (~> 5.50)
   twitter-bootstrap-rails!
   tzinfo-data
   web-console (>= 3.3.0)
