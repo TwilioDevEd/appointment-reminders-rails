@@ -30,7 +30,7 @@ gem 'rails-controller-testing'
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 
-gem 'bootstrap', '~> 4.6'
+gem 'bootstrap', '~> 5.0'
 # Use bootstrap themes
 gem 'twitter-bootstrap-rails', :git => 'git://github.com/seyhunak/twitter-bootstrap-rails.git'
 
