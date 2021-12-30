@@ -1,0 +1,15 @@
+version: 2
+updates:
+- package-ecosystem: bundler
+  directory: "/"
+  schedule:
+    interval: daily
+  open-pull-requests-limit: 10
+  ignore:
+  - dependency-name: bootsnap
+    versions:
+    - 1.6.0
+    - 1.7.3
+  - dependency-name: twilio-ruby
+    versions:
+    - 5.46.1
