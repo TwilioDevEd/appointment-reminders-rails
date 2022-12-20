@@ -12,7 +12,7 @@ gem 'sqlite3', '~> 1.4'
 # Use Puma as the app server
 gem 'puma', '~> 5.4'
 # Use SCSS for stylesheets
-gem 'sass-rails', '>= 6'
+gem 'sass-rails', '>= 6.0.0'
 # Transpile app-like JavaScript. Read more: https://github.com/rails/webpacker
 gem 'webpacker', '~> 5.4'
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
@@ -30,7 +30,7 @@ gem 'rails-controller-testing'
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 
-gem 'bootstrap', '~> 5.0'
+gem 'bootstrap', '~> 5.0', '>= 5.0.1'
 # Use bootstrap themes
 gem 'twitter-bootstrap-rails', :git => 'git://github.com/seyhunak/twitter-bootstrap-rails.git'
 
