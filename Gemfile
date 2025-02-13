@@ -6,7 +6,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby '~> 2.6'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '~> 6.1.4'
+gem 'rails', '~> 7.0.0'
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3', '~> 1.4'
 # Use Puma as the app server
@@ -30,7 +30,7 @@ gem 'rails-controller-testing'
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 
-gem 'bootstrap', '~> 5.0'
+gem 'bootstrap', '~> 5.3', '>= 5.3.2'
 # Use bootstrap themes
 gem 'twitter-bootstrap-rails', :git => 'git://github.com/seyhunak/twitter-bootstrap-rails.git'
 
